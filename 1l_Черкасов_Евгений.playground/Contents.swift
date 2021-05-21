@@ -38,9 +38,15 @@ triangle(firstLeg: 4, secondLeg: 3)
 
 //tip: Проценты вводить в формате: 10% = 0.1
 
-func amount(vklad: Double, percent: Double, years: Double){
-    print("Сумма вклада через \(years) равна \(vklad * pow((1 + percent), years))")
+func depositAmount(vklad: Double, percent: Double, years: Double){
+    
+    let deposit: Double
+    
+    deposit = vklad * pow((1 + percent/12), years * 12)
+    
+    print("Сумма вклада через \(years) равна \(deposit)")
+    
 }
 
 //Проверка: Вклад = 100 000, процент = 10%, на 5 лет Ответ: 161 051
-amount(vklad: 100000, percent: 0.1, years: 5)
+depositAmount(vklad: 100000, percent: 0.1, years: 5)
